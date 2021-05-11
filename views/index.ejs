@@ -1,0 +1,35 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../public/styles/style.css">
+</head>
+<body>
+<h1><%= title['hero_1_title'] %></h1>
+
+<div class="form-group">
+    <div class="dropdown">
+        <button class="dropdown__button"><%= title['compare-tabs_1_title'] %></button>
+        <ul class="dropdown__list">
+            <% for(var i = 1; i < title['total_cities_1_value']; i++) {%>
+            <li class="dropdown__list-item" data-value="<%= title['compare-tabs_1_city_'+i+'_cigg'] %>"><%= title['compare-tabs_1_city_'+i+'_name'] %> <%= title['compare-tabs_1_city_'+i+'_aqi'] %></li>
+            <%} %>
+        </ul>
+
+        <input type="text" name="select-category" value="" class="dropdown__input-hidden">
+        <div>Quality in cigarettes</div>
+            <div class="pollution-coeff"></div>
+
+
+        <div>Quality in percent</div>
+        <div class="bar">
+            <div class="progress" id="pollution">
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../public/main.js"></script>
+<script src="../public/bar.js"></script>
+
+</body>
+</html>
